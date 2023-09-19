@@ -61,6 +61,17 @@ def markAsComplete():
             listbox.delete(ANCHOR)
 
             
+def editTask():
+    task = str(listbox.get(ANCHOR))
+    task_entry.insert(0, task)
+    if task in task_list:
+        task_list.remove(task)
+        with open("E:/Internships/Codsoft python/Tasks/To Do List/tasklist.txt", 'w') as taskfile:
+            for task in task_list:
+                taskfile.write(task + "\n")
+
+            listbox.delete(ANCHOR)
+
 # icon
 image_icon = PhotoImage(file="E:/Internships/Codsoft python/Tasks/To Do List/task.png")
 root.iconphoto(False, image_icon)
@@ -94,7 +105,7 @@ button.place(x=300, y=0)
 frame1 = Frame(root, bd=3, width=700, height=280, bg="#32405b")
 frame1.pack(pady=(100, 0))
 
-listbox = Listbox(frame1, font=('arial, 12'), width=40, height=10, bg="#32405b", fg="white", cursor="hand2", selectbackground="#5a95ff")
+listbox = Listbox(frame1, font=('arial, 16'), width=40, height=6, bg="#32405b", fg="white", cursor="hand2", selectbackground="#5a95ff")
 listbox.pack(side=LEFT, fill=BOTH, padx=2)
 scrollbar=Scrollbar(frame1)
 scrollbar.pack(side=RIGHT, fill=BOTH)
@@ -117,12 +128,17 @@ scrollbar.pack(side=RIGHT, fill=BOTH)
 #delete
 delete_icon = PhotoImage(file="E:/Internships/Codsoft python/Tasks/To Do List/delete.png")
 # Button(root, image=delete_icon, bd=0, command=deleteTask).pack(side=BOTTOM, pady=13)
-Button(root, image=delete_icon, bd=0, command=deleteTask).place(x=130, y=580)
+Button(root, image=delete_icon, bd=0, command=deleteTask).place(x=110, y=580)
 
 #mark as complete
 correct_icon = PhotoImage(file="E:/Internships/Codsoft python/Tasks/To Do List/correct.png")
 correct_icon = correct_icon.subsample(round(correct_icon.width() / 50), round(correct_icon.height() / 50))
-Button(root, image=correct_icon, bd=0, command=markAsComplete).place(x=210, y=580)
+Button(root, image=correct_icon, bd=0, command=markAsComplete).place(x=180, y=580)
+
+#Edit
+edit_icon = PhotoImage(file="E:/Internships/Codsoft python/Tasks/To Do List/pen.png")
+edit_icon = edit_icon.subsample(round(edit_icon.width() / 50), round(edit_icon.height() / 50))
+Button(root, image=edit_icon, bd=0, command=editTask).place(x=250, y=580)
 
 
 
