@@ -5,3 +5,6 @@
 
 <h3> ◼️ Task-2: Simple Calculator 🧮 </h3>
 <p> Simple GUI calculator with basic arithmetic operations, allowing user to add, subtract, multiply, and divide numbers. </p>
+
+<h3> ◼️ Task-3: Password Generator 🔐 </h3>
+<p> password generator that generates strong and random passwords for users. This project aims to create a password generator application using Python, allowing users to specify the length and complexity of the password. </p>
