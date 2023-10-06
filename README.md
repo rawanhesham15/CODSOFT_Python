@@ -8,3 +8,6 @@
 
 <h3> ◼️ Task-3: Password Generator 🔐 </h3>
 <p> password generator that generates strong and random passwords for users. This project aims to create a password generator application using Python, allowing users to specify the length and complexity of the password. </p>
+                                                                                                                                                                                                                 <h3> ◼️ Task-4: Rock Paper Scissors Game 🎮 </h3>
+<p>  Simple GUI Rock Paper Scissors game, allowing user to play against computer. </p>
+
